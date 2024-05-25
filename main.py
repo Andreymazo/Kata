@@ -44,7 +44,11 @@ def find_action(list_in):
 if __name__ == '__main__':
     
     print('Input')
-    s =  input()
+    s =  input().split(' ') # У видел пробелы должны быть в примерах, поэтому туда сюда пробелы вставляем убираем
+    # Ввод должен быть такой "2 + 2" , а не такой "2+2"
+    print(s)
+    s = ' '.join(s).replace(" ", "")
+    print('s', s)
     list_of_actions, lst_nums = find_action(s) # Получили список с дейсвием и список с запятой, вместо действиия между 
     #числами в случае если есть действие и если нет действия. то 'smth'=list_of_actions 'smth' - это значит, что ошибка
     lst_nums, list_of_actions, = rimsk_to_arab(lst_nums, list_of_actions)
