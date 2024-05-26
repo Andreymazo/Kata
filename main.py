@@ -6,7 +6,7 @@ def rimsk_to_arab(lst_nums, list_of_actions):#, str_act):# На входе ес�
     #если разные, то 'smth' 'smth'
     action_lst = ['+', '-', '*', '/']
     nums_rimsk = ['I','II','III','IV','V', 'VI','VII','VIII','IX','X']
-    nums_arabsk =[str(i) for i in range(0,10)]
+    nums_arabsk =[str(i) for i in range(0,11)]
     dic_nums ={1 : 'I', 2 : 'II', 3 : 'III', 4 : 'IV', 5 : 'V', 6 : 'VI', 7 : 'VII', 8 : 'VIII', 9 : 'IX', 10:  'X'}
     new_lst_rimsk=[]
     new_lst_arabsk=[]
