@@ -48,8 +48,6 @@ def find_action(list_in):
 """В случае флага rimsk возвращаем римский ответ"""
 def connver_rimsk(num, flag):
     dic_nums ={1 : 'I', 2 : 'II', 3 : 'III', 4 : 'IV', 5 : 'V', 6 : 'VI', 7 : 'VII', 8 : 'VIII', 9 : 'IX', 10:  'X'}
-    
-    # print('---------num====', num)
     if flag == 'rimsk':
         num = [v for k,v in dic_nums.items() if num==k][0]# Так красивее и эффективнее
         # for k,v in dic_nums.items():
