@@ -61,9 +61,7 @@ if __name__ == '__main__':
     print('Input')
     s =  input().split(' ') # У видел пробелы должны быть в примерах, поэтому туда сюда пробелы вставляем убираем
     # Ввод должен быть такой "2 + 2" , а не такой "2+2"
-    # print(s)
     s = ' '.join(s).replace(" ", "")
-    # print('s', s)
     list_of_actions, lst_nums = find_action(s) # Получили список с дейсвием и список с запятой, вместо действиия между 
     #числами в случае если есть действие и если нет действия. то 'smth'=list_of_actions 'smth' - это значит, что ошибка
     lst_nums, list_of_actions, = rimsk_to_arab(lst_nums, list_of_actions)#lst_nums - tuple
@@ -73,12 +71,9 @@ if __name__ == '__main__':
         action = list_of_actions[0]
         result = Calcnums(num1, num2, action)
         print("Output")
-        # print('lst_nums[1]', lst_nums[1])
         lst_nums=connver_rimsk(result.result_nums(), lst_nums[1])
-        # print(result.result_nums(), lst_nums[1])
         print(lst_nums)
-        # print('result.result_nums()', result.result_nums())
-        # print('lst_nums[1]', lst_nums[1])
+     
    
     elif list_of_actions =='smth' and lst_nums=='smth':
         print(f'{panic}. Должно быть одно действие и Invalid figures were in input')
