@@ -9,7 +9,7 @@
 
 test сделан только на одну функцию, на 1 ее вариант использования, если будут силы, то доделаю, когда-нибудь
 ##
-        python -m unittest discover -p 'test_1.py'
+        python -m unittest tests.test_1
 
 
 

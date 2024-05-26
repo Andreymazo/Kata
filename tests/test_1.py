@@ -9,6 +9,7 @@ class TestSum(unittest.TestCase):
         data2 = ['+']#lst_nums, list_of_actions
         result = rimsk_to_arab(data1, data2)
         self.assertEqual(result, ('smth', ['+']))
+        #python -m unittest tests.test_1
       #python -m unittest discover -p 'test_1.py'# start test
 
 if __name__ == '__main__':
