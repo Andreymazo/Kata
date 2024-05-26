@@ -21,13 +21,14 @@ def rimsk_to_arab(lst_nums, list_of_actions):#, str_act):# На входе ес�
     if list_of_actions[0] not in action_lst:
         list_of_actions='smth'
     if len(new_lst_arabsk) == 1 and len(new_lst_rimsk) == 1 or len(new_lst_arabsk) == 0 and len(new_lst_rimsk) == 1\
-        or len(new_lst_arabsk) == 1 and len(new_lst_rimsk) == 0 or len(new_lst_arabsk) == 0 and len(new_lst_rimsk) == 0:# Варианты неправильных цифр
+        or len(new_lst_arabsk) == 1 and len(new_lst_rimsk) == 0 or len(new_lst_arabsk) == 0 and len(new_lst_rimsk) \
+            == 0 or len(new_lst_arabsk) > 2 or len(new_lst_rimsk) > 2:# Варианты неправильных цифр
         return 'smth', list_of_actions
     elif len(new_lst_arabsk) == 2 or len(new_lst_rimsk) == 2:
         return new_lst, list_of_actions
     
 
-"""Найдем действие"""
+"""Найдем действие, если менее 1 или более 1 вернем 'smth'"""
 def find_action(list_in):
         action_lst = ['+', '-', '*', '/']
         list_of_actions=[]
@@ -35,8 +36,8 @@ def find_action(list_in):
             if i in action_lst:
                 list_of_actions.append(i)
         if len(list_of_actions) !=1:# Пробежались по действиям ,если ни одного или больше 1, то 
-            print(f'{panic} Действие должно быть одно')
-            return('smth', 'smth')
+            # print(f'{panic} Действие должно быть одно')
+            return('smth', list_in)
         elif len(list_of_actions) == 1:
             list_out = list_in.split(f"{list_of_actions[0]}")
             return list_of_actions, list_out
@@ -46,9 +47,9 @@ if __name__ == '__main__':
     print('Input')
     s =  input().split(' ') # У видел пробелы должны быть в примерах, поэтому туда сюда пробелы вставляем убираем
     # Ввод должен быть такой "2 + 2" , а не такой "2+2"
-    print(s)
+    # print(s)
     s = ' '.join(s).replace(" ", "")
-    print('s', s)
+    # print('s', s)
     list_of_actions, lst_nums = find_action(s) # Получили список с дейсвием и список с запятой, вместо действиия между 
     #числами в случае если есть действие и если нет действия. то 'smth'=list_of_actions 'smth' - это значит, что ошибка
     lst_nums, list_of_actions, = rimsk_to_arab(lst_nums, list_of_actions)
